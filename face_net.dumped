@@ -1,0 +1,204 @@
+digraph G {
+	"cluster_19" [label="{data_bn/FusedBatchNorm\nBatchNorm\n | data_scale/Mul\nScale\n | data_scale/BiasAdd\nShift\noutput: 1 x 3 x 300 x 300\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"cluster_18" [label="{conv1_h/Conv2D\nConvolution\nkernel_size (HxW): 7 x 7\lstride (HxW): 2 x 2\ldilation (HxW): 1 x 1\l | conv1_bn_h/FusedBatchNorm\nBatchNorm\n | conv1_scale_h/Mul\nScale\n | conv1_scale_h/BiasAdd\nShift\n | Relu\nReLU\noutput: 1 x 32 x 150 x 150\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"conv1_pool/MaxPool" [label="conv1_pool/MaxPool\nPooling\nkernel (HxW): 3 x 3\lstride (HxW): 2 x 2\lpool: max\loutput: 1 x 32 x 75 x 75\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_17" [label="{layer_64_1_conv1_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\l | layer_64_1_scale2_h/Mul\nScale\n | layer_64_1_scale2_h/BiasAdd\nShift\n | Relu_1\nReLU\noutput: 1 x 32 x 75 x 75\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_64_1_conv2_h/Conv2D" [label="layer_64_1_conv2_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 32 x 75 x 75\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_16" [label="{add\nEltwise\n | layer_128_1_bn1_h/FusedBatchNorm\nBatchNorm\noutput: 1 x 32 x 75 x 75\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_128_1_scale1_h/Mul" [label="layer_128_1_scale1_h/Mul\nScale\noutput: 1 x 32 x 75 x 75\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_128_1_scale1_h/BiasAdd" [label="layer_128_1_scale1_h/BiasAdd\nShift\noutput: 1 x 32 x 75 x 75\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"Relu_2" [label="Relu_2\nReLU\noutput: 1 x 32 x 75 x 75\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_15" [label="{layer_128_1_conv1_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 2 x 2\l | layer_128_1_scale2/Mul\nScale\n | layer_128_1_scale2/BiasAdd\nShift\n | Relu_3\nReLU\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_128_1_conv2/Conv2D" [label="layer_128_1_conv2/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_128_1_conv_expand_h/Conv2D" [label="layer_128_1_conv_expand_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 2 x 2\loutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_14" [label="{add_1\nEltwise\n | layer_256_1_bn1/FusedBatchNorm\nBatchNorm\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_256_1_scale1/Mul" [label="layer_256_1_scale1/Mul\nScale\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_256_1_scale1/BiasAdd" [label="layer_256_1_scale1/BiasAdd\nShift\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"Relu_4" [label="Relu_4\nReLU\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_13" [label="{layer_256_1_conv1/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 2 x 2\ldilation (HxW): 1 x 1\l | layer_256_1_scale2/Mul\nScale\n | layer_256_1_scale2/BiasAdd\nShift\n | Relu_5\nReLU\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_256_1_conv2/Conv2D" [label="layer_256_1_conv2/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv4_3_norm/l2_normalize" [label="conv4_3_norm/l2_normalize\nNormalize\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv4_3_norm/mul_1" [label="conv4_3_norm/mul_1\nScale\noutput: 1 x 128 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"PriorBox_0" [label="PriorBox_0\nPriorBox\noutput: 1 x 2 x 23104\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv4_3_norm_mbox_conf/Conv2D" [label="conv4_3_norm_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 8 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_6/Reshape/nchw" [label="flatten_6/Reshape/nchw\nPermute\noutput: 1 x 38 x 38 x 8\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_6/Reshape" [label="flatten_6/Reshape\nFlatten\noutput: 1 x 11552\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv4_3_norm_mbox_loc/Conv2D" [label="conv4_3_norm_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 16 x 38 x 38\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten/Reshape/nchw" [label="flatten/Reshape/nchw\nPermute\noutput: 1 x 38 x 38 x 16\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten/Reshape" [label="flatten/Reshape\nFlatten\noutput: 1 x 23104\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_256_1_conv_expand/Conv2D" [label="layer_256_1_conv_expand/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 2 x 2\loutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_12" [label="{add_2\nEltwise\n | layer_512_1_bn1/FusedBatchNorm\nBatchNorm\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_512_1_scale1/Mul" [label="layer_512_1_scale1/Mul\nScale\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_512_1_scale1/BiasAdd" [label="layer_512_1_scale1/BiasAdd\nShift\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"Relu_6" [label="Relu_6\nReLU\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_11" [label="{layer_512_1_conv1_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\l | layer_512_1_scale2_h/Mul\nScale\n | layer_512_1_scale2_h/BiasAdd\nShift\n | Relu_7\nReLU\noutput: 1 x 128 x 19 x 19\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"layer_512_1_conv2_h/convolution" [label="layer_512_1_conv2_h/convolution\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\ldilation (HxW): 2 x 2\loutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"layer_512_1_conv_expand_h/Conv2D" [label="layer_512_1_conv_expand_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 1 x 1\loutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_10" [label="{add_3\nEltwise\n | last_bn_h/FusedBatchNorm\nBatchNorm\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"last_scale_h/Mul" [label="last_scale_h/Mul\nScale\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"last_scale_h/BiasAdd" [label="last_scale_h/BiasAdd\nShift\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"last_relu" [label="last_relu\nReLU\noutput: 1 x 256 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"PriorBox_1" [label="PriorBox_1\nPriorBox\noutput: 1 x 2 x 8664\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"fc7_mbox_conf/Conv2D" [label="fc7_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 12 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_7/Reshape/nchw" [label="flatten_7/Reshape/nchw\nPermute\noutput: 1 x 19 x 19 x 12\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_7/Reshape" [label="flatten_7/Reshape\nFlatten\noutput: 1 x 4332\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"fc7_mbox_loc/Conv2D" [label="fc7_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 24 x 19 x 19\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_1/Reshape/nchw" [label="flatten_1/Reshape/nchw\nPermute\noutput: 1 x 19 x 19 x 24\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_1/Reshape" [label="flatten_1/Reshape\nFlatten\noutput: 1 x 8664\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_9" [label="{conv6_1_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 1 x 1\l | conv6_1_h/Relu\nReLU\noutput: 1 x 128 x 19 x 19\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"cluster_8" [label="{conv6_2_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 2 x 2\l | conv6_2_h/Relu\nReLU\noutput: 1 x 256 x 10 x 10\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"PriorBox_2" [label="PriorBox_2\nPriorBox\noutput: 1 x 2 x 2400\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv6_2_mbox_conf/Conv2D" [label="conv6_2_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 12 x 10 x 10\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_8/Reshape/nchw" [label="flatten_8/Reshape/nchw\nPermute\noutput: 1 x 10 x 10 x 12\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_8/Reshape" [label="flatten_8/Reshape\nFlatten\noutput: 1 x 1200\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv6_2_mbox_loc/Conv2D" [label="conv6_2_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 24 x 10 x 10\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_2/Reshape/nchw" [label="flatten_2/Reshape/nchw\nPermute\noutput: 1 x 10 x 10 x 24\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_2/Reshape" [label="flatten_2/Reshape\nFlatten\noutput: 1 x 2400\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_7" [label="{conv7_1_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 1 x 1\l | conv7_1_h/Relu\nReLU\noutput: 1 x 64 x 10 x 10\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"cluster_6" [label="{conv7_2_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 2 x 2\ldilation (HxW): 1 x 1\l | conv7_2_h/Relu\nReLU\noutput: 1 x 128 x 5 x 5\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"PriorBox_3" [label="PriorBox_3\nPriorBox\noutput: 1 x 2 x 600\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv7_2_mbox_conf/Conv2D" [label="conv7_2_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 12 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_9/Reshape/nchw" [label="flatten_9/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 12\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_9/Reshape" [label="flatten_9/Reshape\nFlatten\noutput: 1 x 300\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv7_2_mbox_loc/Conv2D" [label="conv7_2_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 24 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_3/Reshape/nchw" [label="flatten_3/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 24\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_3/Reshape" [label="flatten_3/Reshape\nFlatten\noutput: 1 x 600\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_5" [label="{conv8_1_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 1 x 1\l | conv8_1_h/Relu\nReLU\noutput: 1 x 64 x 5 x 5\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"cluster_4" [label="{conv8_2_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\l | conv8_2_h/Relu\nReLU\noutput: 1 x 128 x 5 x 5\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"PriorBox_4" [label="PriorBox_4\nPriorBox\noutput: 1 x 2 x 400\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv8_2_mbox_conf/Conv2D" [label="conv8_2_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 8 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_10/Reshape/nchw" [label="flatten_10/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 8\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_10/Reshape" [label="flatten_10/Reshape\nFlatten\noutput: 1 x 200\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv8_2_mbox_loc/Conv2D" [label="conv8_2_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 16 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_4/Reshape/nchw" [label="flatten_4/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 16\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_4/Reshape" [label="flatten_4/Reshape\nFlatten\noutput: 1 x 400\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_3" [label="{conv9_1_h/Conv2D\nConvolution\nkernel_size (HxW): 1 x 1\lstride (HxW): 1 x 1\l | conv9_1_h/Relu\nReLU\noutput: 1 x 64 x 5 x 5\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"cluster_2" [label="{conv9_2_h/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\l | conv9_2_h/Relu\nReLU\noutput: 1 x 128 x 5 x 5\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"PriorBox_5" [label="PriorBox_5\nPriorBox\noutput: 1 x 2 x 400\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"mbox_priorbox" [label="mbox_priorbox\nConcat\noutput: 1 x 2 x 35568\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv9_2_mbox_conf/Conv2D" [label="conv9_2_mbox_conf/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 8 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_11/Reshape/nchw" [label="flatten_11/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 8\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_1" [label="{flatten_11/Reshape\nFlatten\n | mbox_conf\nConcat\noutput: 1 x 200\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"mbox_conf_reshape" [label="mbox_conf_reshape\nReshape\noutput: 1 x 8892 x 2\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"mbox_conf_softmax" [label="mbox_conf_softmax\nSoftmax\noutput: 1 x 8892 x 2\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"mbox_conf_flatten" [label="mbox_conf_flatten\nFlatten\noutput: 1 x 17784\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"conv9_2_mbox_loc/Conv2D" [label="conv9_2_mbox_loc/Conv2D\nConvolution\nkernel_size (HxW): 3 x 3\lstride (HxW): 1 x 1\loutput: 1 x 16 x 5 x 5\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"flatten_5/Reshape/nchw" [label="flatten_5/Reshape/nchw\nPermute\noutput: 1 x 5 x 5 x 16\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+	"cluster_0" [label="{flatten_5/Reshape\nFlatten\n | mbox_loc\nConcat\noutput: 1 x 400\lOCV/CPU\n }" fillcolor="#ffffb3" style=filled shape=record]
+	"detection_out" [label="detection_out\nDetectionOutput\noutput: 1 x 1 x 200 x 7\lOCV/CPU\n" fillcolor="#ffffb3" style=filled shape=box]
+
+	"_input" -> "cluster_19"
+	"_input" -> "PriorBox_0"
+	"_input" -> "PriorBox_1"
+	"_input" -> "PriorBox_2"
+	"_input" -> "PriorBox_3"
+	"_input" -> "PriorBox_4"
+	"_input" -> "PriorBox_5"
+	"cluster_19" -> "cluster_18"
+	"cluster_18" -> "conv1_pool/MaxPool"
+	"conv1_pool/MaxPool" -> "cluster_17"
+	"conv1_pool/MaxPool" -> "cluster_16"
+	"cluster_17" -> "layer_64_1_conv2_h/Conv2D"
+	"layer_64_1_conv2_h/Conv2D" -> "cluster_16"
+	"cluster_16" -> "layer_128_1_scale1_h/Mul"
+	"layer_128_1_scale1_h/Mul" -> "layer_128_1_scale1_h/BiasAdd"
+	"layer_128_1_scale1_h/BiasAdd" -> "Relu_2"
+	"Relu_2" -> "cluster_15"
+	"Relu_2" -> "layer_128_1_conv_expand_h/Conv2D"
+	"cluster_15" -> "layer_128_1_conv2/Conv2D"
+	"layer_128_1_conv2/Conv2D" -> "cluster_14"
+	"layer_128_1_conv_expand_h/Conv2D" -> "cluster_14"
+	"cluster_14" -> "layer_256_1_scale1/Mul"
+	"layer_256_1_scale1/Mul" -> "layer_256_1_scale1/BiasAdd"
+	"layer_256_1_scale1/BiasAdd" -> "Relu_4"
+	"Relu_4" -> "cluster_13"
+	"Relu_4" -> "conv4_3_norm/l2_normalize"
+	"Relu_4" -> "layer_256_1_conv_expand/Conv2D"
+	"cluster_13" -> "layer_256_1_conv2/Conv2D"
+	"layer_256_1_conv2/Conv2D" -> "cluster_12"
+	"conv4_3_norm/l2_normalize" -> "conv4_3_norm/mul_1"
+	"conv4_3_norm/mul_1" -> "PriorBox_0"
+	"conv4_3_norm/mul_1" -> "conv4_3_norm_mbox_conf/Conv2D"
+	"conv4_3_norm/mul_1" -> "conv4_3_norm_mbox_loc/Conv2D"
+	"PriorBox_0" -> "mbox_priorbox"
+	"conv4_3_norm_mbox_conf/Conv2D" -> "flatten_6/Reshape/nchw"
+	"flatten_6/Reshape/nchw" -> "flatten_6/Reshape"
+	"flatten_6/Reshape" -> "cluster_1"
+	"conv4_3_norm_mbox_loc/Conv2D" -> "flatten/Reshape/nchw"
+	"flatten/Reshape/nchw" -> "flatten/Reshape"
+	"flatten/Reshape" -> "cluster_0"
+	"layer_256_1_conv_expand/Conv2D" -> "cluster_12"
+	"cluster_12" -> "layer_512_1_scale1/Mul"
+	"layer_512_1_scale1/Mul" -> "layer_512_1_scale1/BiasAdd"
+	"layer_512_1_scale1/BiasAdd" -> "Relu_6"
+	"Relu_6" -> "cluster_11"
+	"Relu_6" -> "layer_512_1_conv_expand_h/Conv2D"
+	"cluster_11" -> "layer_512_1_conv2_h/convolution"
+	"layer_512_1_conv2_h/convolution" -> "cluster_10"
+	"layer_512_1_conv_expand_h/Conv2D" -> "cluster_10"
+	"cluster_10" -> "last_scale_h/Mul"
+	"last_scale_h/Mul" -> "last_scale_h/BiasAdd"
+	"last_scale_h/BiasAdd" -> "last_relu"
+	"last_relu" -> "PriorBox_1"
+	"last_relu" -> "fc7_mbox_conf/Conv2D"
+	"last_relu" -> "fc7_mbox_loc/Conv2D"
+	"last_relu" -> "cluster_9"
+	"PriorBox_1" -> "mbox_priorbox"
+	"fc7_mbox_conf/Conv2D" -> "flatten_7/Reshape/nchw"
+	"flatten_7/Reshape/nchw" -> "flatten_7/Reshape"
+	"flatten_7/Reshape" -> "cluster_1"
+	"fc7_mbox_loc/Conv2D" -> "flatten_1/Reshape/nchw"
+	"flatten_1/Reshape/nchw" -> "flatten_1/Reshape"
+	"flatten_1/Reshape" -> "cluster_0"
+	"cluster_9" -> "cluster_8"
+	"cluster_8" -> "PriorBox_2"
+	"cluster_8" -> "conv6_2_mbox_conf/Conv2D"
+	"cluster_8" -> "conv6_2_mbox_loc/Conv2D"
+	"cluster_8" -> "cluster_7"
+	"PriorBox_2" -> "mbox_priorbox"
+	"conv6_2_mbox_conf/Conv2D" -> "flatten_8/Reshape/nchw"
+	"flatten_8/Reshape/nchw" -> "flatten_8/Reshape"
+	"flatten_8/Reshape" -> "cluster_1"
+	"conv6_2_mbox_loc/Conv2D" -> "flatten_2/Reshape/nchw"
+	"flatten_2/Reshape/nchw" -> "flatten_2/Reshape"
+	"flatten_2/Reshape" -> "cluster_0"
+	"cluster_7" -> "cluster_6"
+	"cluster_6" -> "PriorBox_3"
+	"cluster_6" -> "conv7_2_mbox_conf/Conv2D"
+	"cluster_6" -> "conv7_2_mbox_loc/Conv2D"
+	"cluster_6" -> "cluster_5"
+	"PriorBox_3" -> "mbox_priorbox"
+	"conv7_2_mbox_conf/Conv2D" -> "flatten_9/Reshape/nchw"
+	"flatten_9/Reshape/nchw" -> "flatten_9/Reshape"
+	"flatten_9/Reshape" -> "cluster_1"
+	"conv7_2_mbox_loc/Conv2D" -> "flatten_3/Reshape/nchw"
+	"flatten_3/Reshape/nchw" -> "flatten_3/Reshape"
+	"flatten_3/Reshape" -> "cluster_0"
+	"cluster_5" -> "cluster_4"
+	"cluster_4" -> "PriorBox_4"
+	"cluster_4" -> "conv8_2_mbox_conf/Conv2D"
+	"cluster_4" -> "conv8_2_mbox_loc/Conv2D"
+	"cluster_4" -> "cluster_3"
+	"PriorBox_4" -> "mbox_priorbox"
+	"conv8_2_mbox_conf/Conv2D" -> "flatten_10/Reshape/nchw"
+	"flatten_10/Reshape/nchw" -> "flatten_10/Reshape"
+	"flatten_10/Reshape" -> "cluster_1"
+	"conv8_2_mbox_loc/Conv2D" -> "flatten_4/Reshape/nchw"
+	"flatten_4/Reshape/nchw" -> "flatten_4/Reshape"
+	"flatten_4/Reshape" -> "cluster_0"
+	"cluster_3" -> "cluster_2"
+	"cluster_2" -> "PriorBox_5"
+	"cluster_2" -> "conv9_2_mbox_conf/Conv2D"
+	"cluster_2" -> "conv9_2_mbox_loc/Conv2D"
+	"PriorBox_5" -> "mbox_priorbox"
+	"mbox_priorbox" -> "detection_out"
+	"conv9_2_mbox_conf/Conv2D" -> "flatten_11/Reshape/nchw"
+	"flatten_11/Reshape/nchw" -> "cluster_1"
+	"cluster_1" -> "mbox_conf_reshape"
+	"mbox_conf_reshape" -> "mbox_conf_softmax"
+	"mbox_conf_softmax" -> "mbox_conf_flatten"
+	"mbox_conf_flatten" -> "detection_out"
+	"conv9_2_mbox_loc/Conv2D" -> "flatten_5/Reshape/nchw"
+	"flatten_5/Reshape/nchw" -> "cluster_0"
+	"cluster_0" -> "detection_out"
+}
